@@ -1,0 +1,6 @@
+id,email,age,signup_date,country_code
+1,alice@example.com,34,2023-07-01,US
+2,bob_at_example.com,45,2023-07-02,US
+3,charlie@example.com,200,2023-07-03,GB
+3,charlie@example.com,22,2023-07-03,GB
+,empty@example.com,,2023-07-04,ZZ
