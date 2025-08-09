@@ -1,0 +1,38 @@
+# Example schema for validate_data.py
+
+fields:
+  - name: id
+    type: integer
+    required: true
+    unique: true
+
+  - name: email
+    type: string
+    required: true
+    regex: '^[^@\s]+@[^@\s]+\.[^@\s]+$'
+
+  - name: age
+    type: integer
+    min: 0
+    max: 120
+
+  - name: signup_date
+    type: date
+    format: '%Y-%m-%d'
+
+  - name: country_code
+    type: string
+    min_length: 2
+    max_length: 2
+
+# Dataset-level constraints
+dataset:
+  unique:
+    - [email, signup_date]
+
+# Optional foreign key-like reference
+# Place a file named countries.csv with a 'code' column in the same folder
+references:
+  - field: country_code
+    reference_file: countries.csv
+    reference_field: code

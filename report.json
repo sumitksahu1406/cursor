@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "total_errors": 8,
+    "by_code": {
+      "regex": 1,
+      "max": 1,
+      "required": 1,
+      "unique": 2,
+      "unique_combo": 2,
+      "foreign_key": 1
+    },
+    "by_field": {
+      "email": 1,
+      "age": 1,
+      "id": 3,
+      "email,signup_date": 2,
+      "country_code": 1
+    }
+  },
+  "errors": [
+    {
+      "row_index": 1,
+      "field": "email",
+      "code": "regex",
+      "message": "Value does not match required pattern",
+      "value": "bob_at_example.com"
+    },
+    {
+      "row_index": 2,
+      "field": "age",
+      "code": "max",
+      "message": "Value 200 > max 120.0",
+      "value": 200
+    },
+    {
+      "row_index": 4,
+      "field": "id",
+      "code": "required",
+      "message": "Field is required",
+      "value": ""
+    },
+    {
+      "row_index": 2,
+      "field": "id",
+      "code": "unique",
+      "message": "Duplicate value for unique field",
+      "value": "3"
+    },
+    {
+      "row_index": 3,
+      "field": "id",
+      "code": "unique",
+      "message": "Duplicate value for unique field",
+      "value": "3"
+    },
+    {
+      "row_index": 2,
+      "field": "email,signup_date",
+      "code": "unique_combo",
+      "message": "Duplicate combination of values",
+      "value": "charlie@example.com||2023-07-03"
+    },
+    {
+      "row_index": 3,
+      "field": "email,signup_date",
+      "code": "unique_combo",
+      "message": "Duplicate combination of values",
+      "value": "charlie@example.com||2023-07-03"
+    },
+    {
+      "row_index": 4,
+      "field": "country_code",
+      "code": "foreign_key",
+      "message": "Value not found in reference 'countries.csv:code'",
+      "value": "ZZ"
+    }
+  ]
+}
